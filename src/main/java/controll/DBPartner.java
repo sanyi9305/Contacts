@@ -18,6 +18,9 @@ import org.slf4j.LoggerFactory;
 @Table(name = "DBPartner")
 
 public class DBPartner {
+    /**
+     * Logoláshoz szükséges Objektum.
+     */
     private static Logger logger = LoggerFactory.getLogger(DBPartner.class);
 
     /**
