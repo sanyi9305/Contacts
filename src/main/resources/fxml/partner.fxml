@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="197.0" prefWidth="292.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="controll.partner">
+    <children>
+        <Label layoutX="47.0" layoutY="41.0" text="Név:"/>
+        <TextField fx:id="name" layoutX="121.0" layoutY="37.0" promptText="Minta Sándor"/>
+        <Label layoutX="41.0" layoutY="78.0" text="Mobil1:"/>
+        <TextField fx:id="mobile1" layoutX="121.0" layoutY="74.0" promptText="06101234567"/>
+        <Label layoutX="47.0" layoutY="117.0" text="E-mail:"/>
+        <TextField fx:id="email" layoutX="121.0" layoutY="113.0" promptText="b.sanyi9305@gmail.com"/>
+        <Button fx:id="Save" layoutX="120.0" layoutY="151.0" mnemonicParsing="false" onAction="#SavePartner"
+                text="Mentés"/>
+    </children>
+</AnchorPane>

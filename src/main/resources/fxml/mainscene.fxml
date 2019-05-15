@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="362.0" prefWidth="474.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="controll.mainscene">
+    <children>
+        <Button fx:id="new" layoutX="225.0" layoutY="13.0" mnemonicParsing="false" onAction="#NewContact"
+                text="Új Partner"/>
+        <TableView id="table" fx:id="table" editable="true" layoutY="89.0" prefHeight="231.0" prefWidth="474.0"
+                   AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <placeholder>
+                <Label text="Nincs rendelkezésre álló adat"/>
+            </placeholder>
+            <columns>
+            </columns>
+
+        </TableView>
+    </children>
+</AnchorPane>
