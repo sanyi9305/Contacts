@@ -40,7 +40,7 @@
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
                         <artifactId>checkstyle</artifactId>
-                        <version>8.8</version>
+                        <version>[8.18,)</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -184,4 +184,9 @@
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
+    <inceptionYear>2019</inceptionYear>
+    <organization>
+        <name>Unideb</name>
+        <url>http://inf.unideb.hu</url>
+    </organization>
 </project>
