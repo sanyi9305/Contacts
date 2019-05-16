@@ -19,7 +19,7 @@ public class DBPartnerTest {
     final String p1email = "Béci93{mail.hu";
     DBPartner partner1 = new DBPartner("Béla",p1mobil,p1email);
     DBPartner partner2 = new DBPartner("Béla","+723077777","bela@example.com");
-    DBPartner partnerDB = DBPartner.ReadOne(1);
+    DBPartner partnerDB = DBPartner.ReadOne(17);
     DBPartner tmp = null;
 
     @Before
@@ -59,16 +59,21 @@ public class DBPartnerTest {
 
     @Test
     public void update() {
-        final String name = "Bodnár Sándo";
+        final String name = "Bodnár Sándor";
+        final String namDB  = partnerDB.getName();
         partnerDB.setName(name);
         partnerDB.Update();
         tmp = DBPartner.ReadOne(partnerDB.getId());
         assertEquals(tmp.getName(),name);
+
+        tmp.setName(namDB);
+        tmp.Update();
+        assertNotEquals(tmp.getName(),name);
+
     }
 
-    @Test
-    public void delete() {
-    }
+
+
 
     @Test
     public void getId() {
@@ -110,4 +115,27 @@ public class DBPartnerTest {
     }
 
 
+    @Test
+    public void create() {
+        partner1.Create();
+        DBPartner p = DBPartner.ReadOne(partner1.getId());
+        assertEquals(partner1.getId(),p.getId());
+        p.Delete();
+    }
+
+    @Test
+    public void delete() {
+        
+
+    }
+
+    @Test
+    public void toString1() {
+        final  String s = "{" +
+                "Név: " + partner1.getName() +
+                "\nMobilszám: " +  partner1.getMobilephone1() +
+                "\nE-mailcím: " +  partner1.getEmail() +
+                '}';
+         assertEquals(partner1.toString(),s);
+    }
 }

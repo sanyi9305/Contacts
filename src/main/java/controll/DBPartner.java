@@ -244,9 +244,9 @@ public class DBPartner {
     @Override
     public String toString() {
         return "{" +
-                "Név: '" + name + '\'' +
-                "\nMobilszám: " + mobilephone1 + '\'' +
-                "\nE-mailcím: " + email + '\'' +
+                "Név: " + name +
+                "\nMobilszám: "  + mobilephone1 +
+                "\nE-mailcím: " + email  +
                 '}';
     }
 }
