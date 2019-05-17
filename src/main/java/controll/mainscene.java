@@ -71,12 +71,16 @@ public class mainscene implements Initializable {
         setTable();
 
     }
+    /*táblázat tartalma*/
+    private  ObservableList<DBPartner> tabledata = FXCollections.observableArrayList();
 
     /**
      * Feltölti a táblázatunkat az adatbázis adataival valamint létrehoz minden sorhoz egy Törlés gombot mellyel törölni tudjuk a rekordokat.
      */
+
+
     public void setTable() {
-        ObservableList<DBPartner> tabledata = FXCollections.observableList(GetAllContacts());
+
         TableColumn NameCol = new TableColumn("Név");
         TableColumn Mobilephone1Col = new TableColumn("Mobil1");
         TableColumn EmailCol = new TableColumn("E-mail");
@@ -157,6 +161,8 @@ public class mainscene implements Initializable {
                                         DBPartner partner = getTableView().getItems().get(getIndex());
                                         tabledata.remove(partner);
                                         partner.Delete();
+
+
                                     });
                                     setGraphic(btn);
                                     setText(null);
@@ -170,6 +176,7 @@ public class mainscene implements Initializable {
         RemoveCol.setCellFactory(cellFactory);
 
         table.getColumns().addAll(NameCol, Mobilephone1Col, EmailCol, RemoveCol);
+        tabledata.setAll(GetAllContacts());
         table.setItems(tabledata);
     }
 

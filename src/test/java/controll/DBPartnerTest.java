@@ -59,7 +59,7 @@ public class DBPartnerTest {
 
     @Test
     public void update() {
-        final String name = "Bodnár Sándor";
+        final String name = "XXX";
         final String namDB  = partnerDB.getName();
         partnerDB.setName(name);
         partnerDB.Update();
