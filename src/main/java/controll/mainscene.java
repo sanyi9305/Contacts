@@ -44,21 +44,7 @@ public class mainscene implements Initializable {
     TableView table;
 
 
-    /**
-     * A GetAllContacts metódus visszaadja az összes adatbázisba mentett rekordot.
-     * @return DBPartner lista mely tartalmazza az összes elemet.
-     */
-    private static List<DBPartner> GetAllContacts() {
-        List<DBPartner> partners = null;
-        EntityManager em;
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
-        em = emf.createEntityManager();
-        TypedQuery<DBPartner> q = em.createQuery("SELECT e FROM DBPartner e", DBPartner.class);
 
-        partners = q.getResultList();
-        return partners;
-
-    }
 
     /**
      * Inicializálja képernyőt feltölti a táblázatunkat a már adatbázisban lévő adatokkal.
@@ -176,7 +162,7 @@ public class mainscene implements Initializable {
         RemoveCol.setCellFactory(cellFactory);
 
         table.getColumns().addAll(NameCol, Mobilephone1Col, EmailCol, RemoveCol);
-        tabledata.setAll(GetAllContacts());
+        tabledata.setAll(DBPartner.GetAllContacts());
         table.setItems(tabledata);
     }
 

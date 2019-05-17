@@ -3,6 +3,7 @@ package controll;
 import org.hibernate.Session;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.slf4j.Logger;
@@ -248,5 +249,21 @@ public class DBPartner {
                 "\nMobilszám: "  + mobilephone1 +
                 "\nE-mailcím: " + email  +
                 '}';
+    }
+
+    /**
+     * A GetAllContacts metódus visszaadja az összes adatbázisba mentett rekordot.
+     * @return DBPartner lista mely tartalmazza az összes elemet.
+     */
+    public static List<DBPartner> GetAllContacts() {
+        List<DBPartner> partners = null;
+        EntityManager em;
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-persistence-unit-1");
+        em = emf.createEntityManager();
+        TypedQuery<DBPartner> q = em.createQuery("SELECT e FROM DBPartner e", DBPartner.class);
+
+        partners = q.getResultList();
+        return partners;
+
     }
 }
