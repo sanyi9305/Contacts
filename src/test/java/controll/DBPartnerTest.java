@@ -125,7 +125,7 @@ public class DBPartnerTest {
 
     @Test
     public void delete() {
-        
+
 
     }
 
